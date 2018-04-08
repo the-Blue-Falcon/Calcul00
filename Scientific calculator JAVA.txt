@@ -1,0 +1,783 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.lang.Math.*;
+
+class Operation{
+    String op="",pre="", op2="", pre2="";
+
+    public void calc(){
+        final JFrame frame1 = new JFrame("Basic");
+        frame1.setBounds(300,200,220,375);
+        
+        final JFrame frame2 = new JFrame("Scientific");
+        frame2.setBounds(300,200,270,375);
+        
+        frame1.setLayout(null);
+        frame2.setLayout(null);
+
+        frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+               
+        JMenuBar jmb = new JMenuBar();
+        JMenu jmFile = new JMenu ("File");
+        JMenuItem jmiBasic = new JMenuItem ("Basic");
+        JMenuItem jmiScientific = new JMenuItem ("Scientific");
+        JMenuItem jmiExit = new JMenuItem ("Exit");
+        jmFile.add(jmiBasic);
+        jmFile.add(jmiScientific);
+        jmFile.add(jmiExit);
+        jmb.add(jmFile);
+        frame1.add(jmb);
+        frame1.setJMenuBar(jmb);
+        
+        final JTextField txtid = new JTextField();
+        txtid.setBounds(10,10,200,50);
+        frame1.add(txtid);
+        txtid.setFont(new java.awt.Font("Lucida Grande", 0, 19));
+        txtid.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtid.setText("0");
+        txtid.disable();
+        
+        JButton a = new JButton ("1");
+        a.setBounds(10,220,50,50);
+        frame1.add(a);
+        
+        JButton b = new JButton ("2");
+        b.setBounds(60,220,50,50);
+        frame1.add(b);
+        
+        JButton c = new JButton ("3");
+        c.setBounds(110,220,50,50);
+        frame1.add(c);
+        
+        JButton d = new JButton ("4");
+        d.setBounds(10,170,50,50);
+        frame1.add(d);
+        
+        JButton e = new JButton ("5");
+        e.setBounds(60,170,50,50);
+        frame1.add(e);
+        
+        JButton f = new JButton ("6");
+        f.setBounds(110,170,50,50);
+        frame1.add(f);
+        
+        JButton g = new JButton ("7");
+        g.setBounds(10,120,50,50);
+        frame1.add(g);
+        
+        JButton h = new JButton ("8");
+        h.setBounds(60,120,50,50);
+        frame1.add(h);
+        
+        JButton i = new JButton ("9");
+        i.setBounds(110,120,50,50);
+        frame1.add(i);
+        
+        JButton j = new JButton ("0");
+        j.setBounds(60,270,50,50);
+        frame1.add(j);
+        
+        JButton k = new JButton ("+");
+        k.setBounds(160,120,50,100);
+        frame1.add(k);
+        
+        JButton l = new JButton ("-");
+        l.setBounds(160,70,50,50);
+        frame1.add(l);
+        
+        JButton m = new JButton ("*");
+        m.setBounds(110,70,50,50);
+        frame1.add(m);
+        
+        JButton n = new JButton ("/");
+        n.setBounds(60,70,50,50);
+        frame1.add(n);
+        
+        JButton o = new JButton ("=");
+        o.setBounds(160,220,50,100);
+        frame1.add(o);
+        
+        JButton p = new JButton (".");
+        p.setBounds(110,270,50,50);
+        frame1.add(p);
+        
+        JButton q = new JButton ("Del");
+        q.setBounds(10,270,50,50);
+        frame1.add(q);
+        
+        JButton r = new JButton ("AC");
+        r.setBounds(10,70,50,50);
+        frame1.add(r);
+        
+        frame1.setVisible(true);
+        
+        a.addActionListener(new ActionListener(){ //1
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("1");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("1");
+                else
+                    txtid.setText(txtid.getText()+"1");
+            }
+        });
+        
+        b.addActionListener(new ActionListener(){ //2
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("2");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("2");
+                else
+                    txtid.setText(txtid.getText()+"2");
+            }
+        });
+        
+        c.addActionListener(new ActionListener(){ //3
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("3");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("3");
+                else
+                    txtid.setText(txtid.getText()+"3");
+            }
+        });
+        
+        d.addActionListener(new ActionListener(){ //4
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("4");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("4");
+                else
+                    txtid.setText(txtid.getText()+"4");
+            }
+        });
+        
+        e.addActionListener(new ActionListener(){ //5
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("5");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("5");
+                else
+                    txtid.setText(txtid.getText()+"5");
+            }
+        });
+        
+        f.addActionListener(new ActionListener(){ //6
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("6");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("6");
+                else
+                    txtid.setText(txtid.getText()+"6");
+            }
+        });
+        
+        g.addActionListener(new ActionListener(){ //7
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("7");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("7");
+                else
+                    txtid.setText(txtid.getText()+"7");
+            }
+        });
+        
+        h.addActionListener(new ActionListener(){ //8
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("8");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("8");
+                else
+                    txtid.setText(txtid.getText()+"8");
+            }
+        });
+        
+        i.addActionListener(new ActionListener(){ //9
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("9");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("9");
+                else
+                    txtid.setText(txtid.getText()+"9");
+            }
+        });
+        
+        j.addActionListener(new ActionListener(){ //0
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("0");
+                    op="";
+                }
+                else if(txtid.getText().equals("0"))
+                    txtid.setText("0");
+                else
+                    txtid.setText(txtid.getText()+"0");
+            }
+        });
+        
+        k.addActionListener(new ActionListener(){ //+
+            public void actionPerformed (ActionEvent ae){
+                op="+";
+                pre=txtid.getText();
+                txtid.setText("");
+            }
+        });
+        
+        l.addActionListener(new ActionListener(){ //-
+            public void actionPerformed (ActionEvent ae){
+                op="-";
+                pre=txtid.getText();
+                txtid.setText("");
+            }
+        });
+        
+        m.addActionListener(new ActionListener(){ //*
+            public void actionPerformed (ActionEvent ae){
+                op="*";
+                pre=txtid.getText();
+                txtid.setText("");
+            }
+        });
+        
+        n.addActionListener(new ActionListener(){ ///
+            public void actionPerformed (ActionEvent ae){
+                op="/";
+                pre=txtid.getText();
+                txtid.setText("");
+            }
+        });
+        
+        p.addActionListener(new ActionListener(){ //0.0 dot
+            public void actionPerformed (ActionEvent ae){
+                if(op.equals("=")){
+                    txtid.setText("0.");
+                    op="";
+                }
+                else
+                    txtid.setText(txtid.getText()+".");
+            }
+        });
+        
+        q.addActionListener(new ActionListener(){ //Del
+            public void actionPerformed (ActionEvent ae){
+                op="del";
+                String str=txtid.getText();
+                int p = str.length();
+                if(p-1!=0)
+                    txtid.setText(txtid.getText().substring(0,p-1));
+                else
+                    txtid.setText("0");
+            }
+        });
+        
+        r.addActionListener(new ActionListener(){ //AC
+            public void actionPerformed (ActionEvent ae){
+                op="";
+                pre="";
+                txtid.setText("0");
+            }
+        });
+        
+        o.addActionListener(new ActionListener(){ //=
+            public void actionPerformed (ActionEvent ae){
+                switch(op){
+                    case "":
+                        txtid.setText("0");
+                        break;
+                    case"+":
+                        txtid.setText((Float.parseFloat(pre)+Float.parseFloat(txtid.getText()))+"");
+                        break;
+                    case "-":
+                        txtid.setText((Float.parseFloat(pre)-Float.parseFloat(txtid.getText()))+"");
+                        break;
+                    case"*":
+                        txtid.setText((Float.parseFloat(pre)*Float.parseFloat(txtid.getText()))+"");
+                        break;
+                    case"/":
+                        txtid.setText((Float.parseFloat(pre)/Float.parseFloat(txtid.getText()))+"");
+                        break;
+                    case "=":
+                        break;
+                }
+                op="=";
+            }
+        });
+        
+        jmiBasic.addActionListener(new ActionListener(){ //Basic
+            public void actionPerformed (ActionEvent ae){
+                frame1.setVisible(true);
+                frame2.setVisible(false);
+            }
+        });
+        
+        jmiScientific.addActionListener(new ActionListener(){ //Scientific
+            public void actionPerformed (ActionEvent ae){
+                frame1.setVisible(false);
+                frame2.setVisible(true);
+            }
+        });
+        
+        jmiExit.addActionListener(new ActionListener(){ //Exit
+            public void actionPerformed (ActionEvent ae){
+                System.exit(0);
+            }
+        });
+        
+        JMenuBar jmb2 = new JMenuBar();
+        JMenu jmFile2 = new JMenu ("File");
+        JMenuItem jmiBasic2 = new JMenuItem ("Basic");
+        JMenuItem jmiScientific2 = new JMenuItem ("Scientific");
+        JMenuItem jmiExit2 = new JMenuItem ("Exit");
+        jmFile2.add(jmiBasic2);
+        jmFile2.add(jmiScientific2);
+        jmFile2.add(jmiExit2);
+        jmb2.add(jmFile2);
+        frame2.add(jmb2);
+        frame2.setJMenuBar(jmb2);
+        
+        final JTextField txtid2 = new JTextField();
+        txtid2.setBounds(10,10,250,50);
+        frame2.add(txtid2);
+        txtid2.setFont(new java.awt.Font("Lucida Grande", 0, 19));
+        txtid2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtid2.setText("0");
+        txtid2.disable();
+        
+        JButton a2 = new JButton ("1");
+        a2.setBounds(10,220,50,50);
+        frame2.add(a2);
+        
+        JButton b2 = new JButton ("2");
+        b2.setBounds(60,220,50,50);
+        frame2.add(b2);
+        
+        JButton c2 = new JButton ("3");
+        c2.setBounds(110,220,50,50);
+        frame2.add(c2);
+        
+        JButton d2 = new JButton ("4");
+        d2.setBounds(10,170,50,50);
+        frame2.add(d2);
+        
+        JButton e2 = new JButton ("5");
+        e2.setBounds(60,170,50,50);
+        frame2.add(e2);
+        
+        JButton f2 = new JButton ("6");
+        f2.setBounds(110,170,50,50);
+        frame2.add(f2);
+        
+        JButton g2 = new JButton ("7");
+        g2.setBounds(10,120,50,50);
+        frame2.add(g2);
+        
+        JButton h2 = new JButton ("8");
+        h2.setBounds(60,120,50,50);
+        frame2.add(h2);
+        
+        JButton i2 = new JButton ("9");
+        i2.setBounds(110,120,50,50);
+        frame2.add(i2);
+        
+        JButton j2 = new JButton ("0");
+        j2.setBounds(60,270,50,50);
+        frame2.add(j2);
+        
+        JButton k2 = new JButton ("+");
+        k2.setBounds(160,120,50,100);
+        frame2.add(k2);
+        
+        JButton l2 = new JButton ("-");
+        l2.setBounds(160,70,50,50);
+        frame2.add(l2);
+        JButton m2 = new JButton ("*");
+        m2.setBounds(110,70,50,50);
+        frame2.add(m2);
+        
+        JButton n2 = new JButton ("/");
+        n2.setBounds(60,70,50,50);
+        frame2.add(n2);
+        
+        JButton o2 = new JButton ("=");
+        o2.setBounds(160,220,50,100);
+        frame2.add(o2);
+        
+        JButton p2 = new JButton (".");
+        p2.setBounds(110,270,50,50);
+        frame2.add(p2);
+        
+        JButton q2 = new JButton ("Del");
+        q2.setBounds(10,270,50,50);
+        frame2.add(q2);
+        
+        JButton r2 = new JButton ("AC");
+        r2.setBounds(10,70,50,50);
+        frame2.add(r2);
+        
+        JButton s2 = new JButton ("Sin");
+        s2.setBounds(210,70,50,50);
+        frame2.add(s2);
+        
+        JButton t2 = new JButton ("Cos");
+        t2.setBounds(210,120,50,50);
+        frame2.add(t2);
+        
+        JButton u2 = new JButton ("Tan");
+        u2.setBounds(210,170,50,50);
+        frame2.add(u2);
+        
+        JButton v2 = new JButton ("Log");
+        v2.setBounds(210,220,50,50);
+        frame2.add(v2);
+        
+        JButton w2 = new JButton ("1/x");
+        w2.setBounds(210,270,50,50);
+        frame2.add(w2);
+        
+        a2.addActionListener(new ActionListener(){ //1
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("1");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("1");
+                else
+                    txtid2.setText(txtid2.getText()+"1");
+            }
+        });
+        
+        b2.addActionListener(new ActionListener(){ //2
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("2");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("2");
+                else
+                    txtid2.setText(txtid2.getText()+"2");
+            }
+        });
+        
+        c2.addActionListener(new ActionListener(){ //3
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid.setText("3");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("3");
+                else
+                    txtid2.setText(txtid2.getText()+"3");
+            }
+        });
+        
+        d2.addActionListener(new ActionListener(){ //4
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("4");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("4");
+                else
+                    txtid2.setText(txtid2.getText()+"4");
+            }
+        });
+        
+        e2.addActionListener(new ActionListener(){ //5
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("5");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("5");
+                else
+                    txtid2.setText(txtid2.getText()+"5");
+            }
+        });
+        
+        f2.addActionListener(new ActionListener(){ //6
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("6");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("6");
+                else
+                    txtid2.setText(txtid2.getText()+"6");
+            }
+        });
+        
+        g2.addActionListener(new ActionListener(){ //7
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("7");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("7");
+                else
+                    txtid2.setText(txtid2.getText()+"7");
+            }
+        });
+        
+        h2.addActionListener(new ActionListener(){ //8
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("8");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("8");
+                else
+                    txtid2.setText(txtid2.getText()+"8");
+            }
+        });
+        
+        i2.addActionListener(new ActionListener(){ //9
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("9");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("9");
+                else
+                    txtid2.setText(txtid2.getText()+"9");
+            }
+        });
+        
+        j2.addActionListener(new ActionListener(){ //0
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("0");
+                    op2="";
+                }
+                else if(txtid2.getText().equals("0"))
+                    txtid2.setText("0");
+                else
+                    txtid2.setText(txtid2.getText()+"0");
+            }
+        });
+        
+        k2.addActionListener(new ActionListener(){ //+
+            public void actionPerformed (ActionEvent ae){
+                op2="+";
+                pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        l2.addActionListener(new ActionListener(){ //-
+            public void actionPerformed (ActionEvent ae){
+                op2="-";
+                pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        m2.addActionListener(new ActionListener(){ //*
+            public void actionPerformed (ActionEvent ae){
+                op2="*";
+                pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        n2.addActionListener(new ActionListener(){ ///
+            public void actionPerformed (ActionEvent ae){
+                op2="/";
+                pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        p2.addActionListener(new ActionListener(){ //0.0 dot
+            public void actionPerformed (ActionEvent ae){
+                if(op2.equals("=")){
+                    txtid2.setText("0.");
+                    op2="";
+                }
+                else
+                    txtid2.setText(txtid2.getText()+".");
+            }
+        });
+        
+        q2.addActionListener(new ActionListener(){ //Del
+            public void actionPerformed (ActionEvent ae){
+                op2="del";
+                String str2=txtid2.getText();
+                int q = str2.length();
+                if(q-1!=0)
+                    txtid2.setText(txtid2.getText().substring(0,q-1));
+                else
+                    txtid2.setText("0");
+            }
+        });
+        
+        r2.addActionListener(new ActionListener(){ //AC
+            public void actionPerformed (ActionEvent ae){
+                op2="";
+                pre2="";
+                txtid2.setText("0");
+            }
+        });
+        
+        s2.addActionListener(new ActionListener(){  //Sin
+            public void actionPerformed (ActionEvent ae){
+                op2="sin";
+                if (txtid2.getText().equals("")||txtid2.getText().equals("0")){
+                    pre2="1";
+                }
+                else
+                    pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        t2.addActionListener(new ActionListener(){  //Cos
+            public void actionPerformed (ActionEvent ae){
+                op2="cos";
+                if (txtid2.getText().equals("")||txtid2.getText().equals("0")){
+                    pre2="1";
+                }
+                else
+                    pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        u2.addActionListener(new ActionListener(){ //Tan
+            public void actionPerformed (ActionEvent ae){
+                op2="tan";
+                if (txtid2.getText().equals("")||txtid2.getText().equals("0")){
+                    pre2="1";
+                }
+                else
+                    pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        v2.addActionListener(new ActionListener(){ //Log
+            public void actionPerformed (ActionEvent ae){
+                op2="log";
+                if (txtid2.getText().equals("")||txtid2.getText().equals("0")){
+                    pre2="1";
+                }
+                else
+                    pre2=txtid2.getText();
+                txtid2.setText("");
+            }
+        });
+        
+        w2.addActionListener(new ActionListener(){ //1/x
+            public void actionPerformed (ActionEvent ae){
+                op2="1/x";
+                pre2=txtid2.getText();
+            }
+        });
+        
+        o2.addActionListener(new ActionListener(){ //=
+            public void actionPerformed (ActionEvent ae){
+                switch(op2){
+                    case "":
+                        txtid2.setText("0");
+                        break;
+                    case"+":
+                        txtid2.setText((Float.parseFloat(pre2)+Float.parseFloat(txtid2.getText()))+"");
+                        pre2="";
+                        break;
+                    case "-":
+                        txtid2.setText((Float.parseFloat(pre2)-Float.parseFloat(txtid2.getText()))+"");
+                        pre2="";
+                        break;
+                    case"*":
+                        txtid2.setText((Float.parseFloat(pre2)*Float.parseFloat(txtid2.getText()))+"");
+                        pre2="";
+                        break;
+                    case"/":
+                        txtid2.setText((Float.parseFloat(pre2)/Float.parseFloat(txtid2.getText()))+"");
+                        pre2="";
+                        break;
+                    case "=":
+                        pre2="";
+                        break;
+                    case "sin":
+                        txtid2.setText((Float.parseFloat(pre2)*Math.sin(Float.parseFloat(txtid2.getText())))+"");
+                        break;
+                    case "cos":
+                        txtid2.setText(Float.parseFloat(pre2)*Math.cos(Float.parseFloat(txtid2.getText()))+"");
+                        break;
+                    case "tan":
+                        txtid2.setText(Float.parseFloat(pre2)*Math.tan(Float.parseFloat(txtid2.getText()))+"");
+                        break;
+                    case "log":
+                        txtid2.setText(Float.parseFloat(pre2)*Math.log(Float.parseFloat(txtid2.getText()))+"");
+                        break;
+                    case "1/x":
+                        txtid2.setText(1/Float.parseFloat(pre2)+"");
+                        break;
+                }
+                op2="=";
+            }
+        });
+        
+        jmiBasic2.addActionListener(new ActionListener(){ //Basic
+            public void actionPerformed (ActionEvent ae){
+                frame2.setVisible(false);
+                frame1.setVisible(true);
+            }
+        });
+        
+        jmiScientific2.addActionListener(new ActionListener(){ //Scientific
+            public void actionPerformed (ActionEvent ae){
+                frame1.setVisible(false);
+                frame2.setVisible(true);
+            }
+        });
+        
+        jmiExit2.addActionListener(new ActionListener(){ //Exit
+            public void actionPerformed (ActionEvent ae){
+                System.exit(0);
+            }
+        });
+    }
+}
+
+class Calculator{
+    public static void main(String args[]){
+        new Operation().calc();
+    }
+}
